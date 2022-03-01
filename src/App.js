@@ -4,23 +4,26 @@ import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Notfound from "./pages/Notfound";
+import { GithubProvider } from "./context/github/GithubContext";
 
 function App() {
   return (
-    <Router>
-      <div className=" flex flex-col justify-between h-screen">
-        <Navbar />
-        <main className="container mx-auto px-3 pb-12">
-          <Routes>
-            <Route exact path="/" element={<Home />}></Route>
-            <Route path="/about" element={<About />}></Route>
-            <Route path="/notfound" element={<Notfound />}></Route>
-            <Route path="/*" element={<Notfound />}></Route>
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <GithubProvider>
+      <Router>
+        <div className=" flex flex-col justify-between h-screen">
+          <Navbar />
+          <main className="container mx-auto px-3 pb-12">
+            <Routes>
+              <Route exact path="/" element={<Home />}></Route>
+              <Route path="/about" element={<About />}></Route>
+              <Route path="/notfound" element={<Notfound />}></Route>
+              <Route path="/*" element={<Notfound />}></Route>
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </GithubProvider>
   );
 }
 
