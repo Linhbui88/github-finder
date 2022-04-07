@@ -4,6 +4,7 @@ import Footer from "./components/layout/Footer";
 import Alert from "./components/layout/Alert";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import User from "./pages/User";
 import Notfound from "./pages/Notfound";
 import { GithubProvider } from "./context/github/GithubContext";
 import { AlertProvider } from "./context/alert/AlertContext";
@@ -13,13 +14,14 @@ function App() {
     <GithubProvider>
       <AlertProvider>
         <Router>
-          <div className=" flex flex-col justify-between h-screen">
+          <div className="bg-stone-300 h-full flex flex-col justify-between h-screen">
             <Navbar />
-            <main className="container mx-auto px-3 pb-12">
+            <main className="container bg-stone-300 mx-auto px-3 pb-12">
               <Alert />
               <Routes>
                 <Route exact path="/" element={<Home />}></Route>
                 <Route path="/about" element={<About />}></Route>
+                <Route path="/user/:login" element={<User />}></Route>
                 <Route path="/notfound" element={<Notfound />}></Route>
                 <Route path="/*" element={<Notfound />}></Route>
               </Routes>

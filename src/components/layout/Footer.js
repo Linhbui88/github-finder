@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   const footerYear = new Date().getFullYear();
   return (
-    <footer className="footer footer-center p-5 shadow-lg bg-neutral text-neutral-content gap-x-1">
+    <footer className="footer footer-center p-5 shadow-lg bg-stone-900 text-stone-300 gap-x-1">
       <svg
         width="50"
         height="50"
