@@ -41,7 +41,10 @@ const UserSearch = () => {
         </form>
       </div>
       {users.length > 0 && (
-        <button onClick={clearUsers} className="btn btn-ghost btn-lg">
+        <button
+          onClick={clearUsers}
+          className="btn btn-ghost btn-lg text-stone-900"
+        >
           CLEAR
         </button>
       )}

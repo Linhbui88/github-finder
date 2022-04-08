@@ -1,4 +1,6 @@
 import { FaEye, FaInfo, FaStar, FaUtensils } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { reposAnim } from "../../animation";
 
 const ReposItem = ({ repo }) => {
   const {
@@ -12,9 +14,14 @@ const ReposItem = ({ repo }) => {
   } = repo;
   return (
     <>
-      <div class="card h-full bg-stone-900 text-stone-300 shadow-xl">
-        <div class="card-body items-center text-center">
-          <h2 class="card-title text-rose-200">{name}</h2>
+      <motion.div
+        className="card h-full bg-stone-900 text-stone-300 shadow-xl"
+        variants={reposAnim}
+        initial="hidden"
+        animate="show"
+      >
+        <div className="card-body items-center text-center">
+          <h2 className="card-title text-rose-200">{name}</h2>
           <div className="flex gap-3">
             <div className="flex gap-1 items-center text-info">
               <FaEye />
@@ -36,10 +43,12 @@ const ReposItem = ({ repo }) => {
 
           <p>{description}</p>
           <div class="card-actions justify-end">
-            <button class="btn btn-ghost">Visit Repo</button>
+            <a href={html_url} target="_blank" rel="noreferrer">
+              <button class="btn btn-ghost">Visit Repo</button>
+            </a>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

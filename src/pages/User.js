@@ -49,7 +49,7 @@ const User = () => {
           <div className="info grid grid-cols-1 justify-items-center items-start sm:justify-items-start sm:!content-center">
             <div className="mb-2 sm:mb-5">
               <div className="flex">
-                <h1 className="text-xl tracking-wider sm:text-xl md:text-3xl ">
+                <h1 className="text-xl tracking-wider font-bold sm:text-xl md:text-3xl ">
                   {name}
                 </h1>
                 {hireable && <div class="badge badge-success">Hireable</div>}
